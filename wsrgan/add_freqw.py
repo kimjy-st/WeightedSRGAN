@@ -58,21 +58,7 @@ def image_crop(sr, gt, patchsize = 32):
     return srtensorlist, freqlist
     
 
-def freq_weight1ORI(freq):
-    if freq == "No high freq":
-        w = 1e-5
-    elif float(freq) < 60:
-        w = 1e-5
-    elif float(freq) >= 60 and freq < 65:
-        w = 2e-5
-    elif float(freq) >=65 and freq <100:
-        w = 3e-5
-    elif float(freq) >=100 and freq < 110:
-        w = 4e-5
-    elif float(freq) >=110:
-        w = 5e-5
 
-    return w
 
 def freq_weight1_ss(freq):
     if freq == "No high freq":
@@ -120,111 +106,7 @@ def freq_weight1_1(freq):
         w = 0.0012
     elif float(freq) >=110:
         w = 0.0014
-    return w
 
 
 
 
-
-
-def freq_weight3(freq):
-    if freq == "No high freq":
-        w3 = 0.00004
-    elif float(freq) < 60:
-        w3 = 0.00004
-    elif float(freq) >= 60 and float(freq) < 80:
-        w3 = 0.00008
-    elif float(freq) >=80 and float(freq) <95:
-        w3 = 0.00012
-    elif float(freq) >= 95 and float(freq) <105:
-        w3 = 0.00016
-    elif float(freq) >=105 and float(freq) < 120:
-        w3 = 0.0002
-    elif float(freq) >=120 and float(freq) < 135:
-        w3 = 0.00024
-    elif float(freq) >=135:
-        w3 = 0.00028
-    return w3
-
-
-def freq_weight4(freq):
-    if freq == "No high freq":
-        w3 = 0.000001
-    elif float(freq) < 110:
-        w3 = 0.00004
-    elif float(freq) >= 110 and float(freq) < 130:
-        w3 = 0.00008
-    elif float(freq) >=130 and float(freq) <140:
-        w3 = 0.00012
-    elif float(freq) >= 140 and float(freq) <150:
-        w3 = 0.00016
-    elif float(freq) >=150 and float(freq) < 160:
-        w3 = 0.0002
-    elif float(freq) >=160 and float(freq) < 165:
-        w3 = 0.00022
-    elif float(freq) >=165 and float(freq) < 170:
-        w3 = 0.00024
-    elif float(freq) >=170 and float(freq) < 175:
-        w3 = 0.00026
-    elif float(freq) >=180 and float(freq) < 185:
-        w3 = 0.00024
-    elif float(freq) >=185:
-        w3 = 0.00028
-    return w3
-
-def freq_weight5(freq):
-    if freq == "No high freq":
-        w3 = 0.001
-    elif float(freq) < 60:
-        w3 = 0.001
-    elif float(freq) >= 60 and float(freq) < 80:
-        w3 = 0.0012
-    elif float(freq) >=80 and float(freq) <95:
-        w3 = 0.0015
-    elif float(freq) >= 95 and float(freq) <105:
-        w3 = 0.0017
-    elif float(freq) >=105 and float(freq) < 120:
-        w3 = 0.0019
-    elif float(freq) >=120 and float(freq) < 135:
-        w3 = 0.002
-    elif float(freq) >=135:
-        w3 = 0.0022
-    return w3
-
-
-def freq_weight6(freq):
-    if freq == "No high freq":
-        w3 = 0.0008
-    elif float(freq) < 60:
-        w3 = 0.0008
-    elif float(freq) >= 60 and float(freq) < 80:
-        w3 = 0.001
-    elif float(freq) >=80 and float(freq) <95:
-        w3 = 0.0012
-    elif float(freq) >= 95 and float(freq) <105:
-        w3 = 0.0014
-    elif float(freq) >=105 and float(freq) < 120:
-        w3 = 0.0016
-    elif float(freq) >=120 and float(freq) < 135:
-        w3 = 0.0018
-    elif float(freq) >=135:
-        w3 = 0.002
-    return w3
-
-
-def freq_weight7(freq):
-    if freq == "No high freq":
-        w3 = 0.0008
-    elif float(freq) < 46.9:
-        w3 = 0.0008
-    elif float(freq) >= 46.9 and float(freq) < 91:
-        w3 = 0.0006
-    elif float(freq) >=91 and float(freq) <95.1:
-        w3 = 0.0008
-    elif float(freq) >= 95.1 and float(freq) <120:
-        w3 = 0.001
-
-    elif float(freq) >=120:
-        w3 = 0.0011
-
-    return w3
