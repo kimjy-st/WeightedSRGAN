@@ -123,6 +123,10 @@ class Discriminator(nn.Module):
             nn.LeakyReLU(0.2, True),
             nn.Linear(1024, 1),
         )
+        
+        ##########################################################
+        ######### patch 별 adv loss 구하기 위해 추가된 부분 ########
+        ##########################################################
         self.patch_classifier = nn.Sequential(
             nn.Linear(512 * 2 * 2,1024),
             nn.LeakyReLU(0.2,True),
@@ -138,6 +142,9 @@ class Discriminator(nn.Module):
             out = torch.flatten(out, 1)
             out = self.classifier(out)
 
+        ##########################################################
+        ######### patch 별 adv loss 구하기 위해 추가된 부분 ########
+        ##########################################################
         else:
             out = self.features(x)
             out = torch.flatten(out, 1)
