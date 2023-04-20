@@ -25,7 +25,7 @@ num_rcb = 16
 # Test upscale factor
 upscale_factor = 4
 # Current configuration parameter method
-mode = "train"
+mode = "test"
 # Experiment name, easy to save weights and log files
 exp_name = "SRGAN_x4-DIV2K_{가중치함수이름} "
 
@@ -75,7 +75,7 @@ if mode == "train":
     valid_print_frequency = 1
 
 if mode == "test":
-    # Test data address #freqw1_1
+    # Test data address #가중치 함수 freqw1_1일 때의 root
     #0 : lr, 1: sr, 2: gt
     set5dir = ["/home/jykim/Project/improved/data/Set5/LRbicx4","/home/jykim/Project/improved/freqw1_1/SR_images/Set5","/home/jykim/Project/improved/data/Set5/GTmod12"]
     set14dir = ["/home/jykim/Project/improved/data/Set14/LRbicx4", "/home/jykim/Project/improved/freqw1_1/SR_images/Set14","/home/jykim/Project/improved/data/Set14/GTmod12"]
@@ -83,7 +83,8 @@ if mode == "test":
     manga109dir = ["/home/jykim/Project/improved/data/Manga109/LRbicx4","/home/jykim/Project/improved/freqw1_1/SR_images/Manga109","/home/jykim/Project/improved/data/Manga109/GTmod12"]
     urban100dir = ["/home/jykim/Project/improved/data/Urban100/LRbicx4","/home/jykim/Project/improved/freqw1_1/SR_images/Urban100","/home/jykim/Project/improved/data/Urban100/GTmod12"]
 
-    test_dir = [set5dir, set14dir,BSD100dir, manga109dir, urban100dir]
+    
+    #가중치 바꿔주기
     g_model_weights_path = f"/home/jykim/Project/improved/SRGAN/results/SRGAN_x4-DIV2K_freqw1_1/g_best.pth.tar"
 
     lr_dir = set5dir[0]
