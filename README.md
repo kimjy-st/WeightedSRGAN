@@ -61,3 +61,11 @@ pip install git+https://github.com/S-aiueo32/lpips-pytorch.git
 4. lr_dir, sr_dir, gt_dir 바꿔가며 성능 구하기 
 5. 만들어진 sr_images 가지고 위의 save_metrics.py 실행
 
+# WSRGAN training, test
+
+1. wsrgan_config.py 에서 mode = train 설정
+2. pretrained_g_model_weights_path = f"/weight/SRResNet_x4-ImageNet-6dd5216c.pth.tar” 설정
+3. exp_name 변경 및 train_gt_images_dir = DIV2K_GT 로 설정
+4. add_freqw.py에 있는 가중치 함수 train_w.py에 import
+5. train_w.py 실행
+6. test 는 위와 과정 동일
