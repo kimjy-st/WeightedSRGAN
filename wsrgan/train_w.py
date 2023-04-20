@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 from typing import Union
 import model
-import srgan_config 
+import wsrgan_config 
 from dataset import CUDAPrefetcher, TrainValidImageDataset, TestImageDataset
 from image_quality import PSNR, SSIM
 from add_freqw import image_crop, freq_weight1_1
