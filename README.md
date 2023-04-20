@@ -51,7 +51,7 @@ pip install git+https://github.com/S-aiueo32/lpips-pytorch.git
 2. pretrained_model_weights_path = /weights/SRResNet_x4-ImageNet-6dd5216c.pth.tar 로 설정
 3. train_gt_images_dir = DIV2K_GT 로 설정
 4. train_srresnet.py 실행
-    1. 
+    
 
 ---
 
