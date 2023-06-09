@@ -370,11 +370,11 @@ def train(
  
             img_adversarial_loss = freqw * losses 
 
-            img_adversarial_loss = torch.tensor(img_adversarial_loss.sum())
+            img_adversarial_loss = torch.tensor(img_adversarial_loss.mean())
             batch_adv_loss.append(img_adversarial_loss)
 
         batch_adv_loss = torch.stack(batch_adv_loss) #list로 append한 거 tensor로 바꿈 
-        adversarial_loss = torch.sum(batch_adv_loss.to(srgan_config.device))
+        adversarial_loss = torch.mean(batch_adv_loss.to(srgan_config.device))
         content_loss = srgan_config.content_weight * content_criterion(sr, gt)
 
         #original adv loss
